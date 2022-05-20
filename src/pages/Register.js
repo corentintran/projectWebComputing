@@ -12,9 +12,7 @@ const register = function (mail, psw) {
     },
 
     body: JSON.stringify({ email: mail, password: psw })
-  })
-    .then((res) => res.json())
-    .then((res) => localStorage.setItem("token", res.token));
+  }).then((res) => res.json());
 };
 
 export default function Register() {

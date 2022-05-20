@@ -24,14 +24,10 @@ export default function Volcano() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
+  const token = localStorage.getItem("token");
   //return (<p> the volcqno id is :{id}</p>)
   //const { volcano } = useVolcanoById(id);
   const volcano = Abu;
-  /*if (loading) {
-    return <p>Loading...</p>;
-   }
-  
-  */
 
   return (
     <div className="container">
@@ -56,13 +52,17 @@ export default function Volcano() {
       <div className="Map">
         <MyMap latitude={volcano.latitude} longitude={volcano.longitude} />
       </div>
-      <div className="Chart">
-        <BarChart
-          pop_5km={volcano.population_5km}
-          pop_10km={volcano.population_10km}
-          pop_30km={volcano.population_30km}
-          pop_100km={volcano.population_100km}
-        />
+      <div className="BarChart">
+        {token === "null" ? (
+          <p>Login to see the population density around the volcano</p>
+        ) : (
+          <BarChart
+            pop_5km={volcano.population_5km}
+            pop_10km={volcano.population_10km}
+            pop_30km={volcano.population_30km}
+            pop_100km={volcano.population_100km}
+          />
+        )}
       </div>
     </div>
   );
@@ -131,5 +131,5 @@ function useVolcanoById(id) {
         volcano
       };
     }
-  }, [id, token]);
+  });
 }
