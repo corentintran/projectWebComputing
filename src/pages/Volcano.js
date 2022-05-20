@@ -3,7 +3,7 @@ import { Button } from "reactstrap";
 import { useEffect, useState } from "react";
 import MyMap from "../components/Map";
 import BarChart from "../components/BarChart";
-
+/*
 const Abu = {
   name: "Abu",
   country: "Japan",
@@ -19,15 +19,15 @@ const Abu = {
   population_30km: 117805,
   population_100km: 4071152
 };
-
+*/
 export default function Volcano() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
   const token = localStorage.getItem("token");
   //return (<p> the volcqno id is :{id}</p>)
-  //const { volcano } = useVolcanoById(id);
-  const volcano = Abu;
+  const { volcano } = useVolcanoById(id);
+  //const volcano = Abu;
 
   return (
     <div className="container">

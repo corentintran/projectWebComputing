@@ -19,7 +19,7 @@ export default function Logout() {
         Back Home
       </Button>
       <button onClick={() => window.location.reload(false)}>
-        Click to reload!
+        Click to refresh navigation!
       </button>
     </div>
   );
