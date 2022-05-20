@@ -15,11 +15,9 @@ import Logout from "./pages/Logout";
 
 export default function App() {
   return (
-    
-
     <BrowserRouter>
       <div className="App">
-      <Header />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/VolcanoList" element={<VolcanoList />} />

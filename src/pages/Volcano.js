@@ -25,7 +25,7 @@ export default function Volcano() {
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
   //return (<p> the volcqno id is :{id}</p>)
-  const {volcano} = useVolcanoById(id);
+  const { volcano } = useVolcanoById(id);
 
   /*if (loading) {
     return <p>Loading...</p>;
@@ -92,5 +92,4 @@ function useVolcanoById(id) {
   return {
     volcano
   };
-  
 }
