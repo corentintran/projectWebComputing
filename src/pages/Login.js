@@ -53,6 +53,9 @@ export default function Login() {
       >
         Login
       </Button>
+      <button onClick={() => window.location.reload(false)}>
+        Click to reload!
+      </button>
     </div>
   );
 }
